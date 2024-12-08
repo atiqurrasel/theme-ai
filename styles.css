@@ -1,7 +1,7 @@
-/* Import Normalize.css to eliminate browser inconsistencies */
+/* Import Normalize.css */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 
-/* CSS Variables for consistent styling */
+/* CSS Variables */
 :root {
     --primary-color: #4CAF50;
     --secondary-color: #FF9800;
@@ -12,7 +12,11 @@
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Global styles */
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-family);
     margin: 0;
@@ -20,15 +24,17 @@ body {
     background-color: var(--background-color);
 }
 
-/* Header styles */
+/* Header & Navigation */
 header {
     background-color: var(--primary-color);
     color: var(--text-color);
     padding: 20px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
-/* Navigation styles */
 nav {
     margin-top: 10px;
     display: flex;
@@ -48,36 +54,54 @@ nav a:focus {
     text-decoration: underline;
 }
 
-/* Focus styles for accessibility */
-a:focus,
-.button:focus {
+nav a[aria-current="page"] {
+    border-bottom: 2px solid var(--text-color);
+    font-style: italic;
+}
+
+/* Accessibility: Focus States */
+a:focus-visible,
+.button:focus-visible {
     outline: 2px dashed var(--primary-color);
     outline-offset: 4px;
 }
 
-/* Container styles */
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* Footer styles */
-footer {
-    background-color: var(--footer-background);
-    color: var(--text-color);
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Sections */
+section {
+    padding: 40px 0;
 }
 
-/* Button styles */
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom right, #4CAF50, #66bb6a);
+    color: var(--text-color);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Buttons */
 .button {
     background-color: var(--secondary-color);
     color: var(--text-color);
-    padding: 0.625rem 1.25rem; /* Equivalent to 10px 20px */
+    padding: 0.625rem 1.25rem;
     border: none;
     cursor: pointer;
     border-radius: var(--border-radius);
@@ -89,18 +113,46 @@ footer {
 
 .button:hover,
 .button:focus {
-    background-color: #e68a00; /* Slightly darker shade */
+    background-color: #e68a00;
     transform: translateY(-2px);
 }
 
-/* Responsive design */
+/* Specialized Button */
+.button.metric {
+    background-color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.button.metric:hover,
+.button.metric:focus {
+    background-color: #3d8c40;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-background);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         width: 100%;
     }
 
+    nav {
+        flex-direction: column;
+        background-color: var(--primary-color);
+        padding: 10px;
+    }
+
     nav a {
-        display: block;
         margin: 10px 0;
     }
 }
