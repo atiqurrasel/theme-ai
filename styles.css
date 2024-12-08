@@ -42,9 +42,19 @@ nav {
     align-items: center;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
 nav a {
     color: var(--text-color);
-    margin: 0 15px;
     text-decoration: none;
     font-weight: 600;
 }
@@ -64,13 +74,6 @@ a:focus-visible,
 .button:focus-visible {
     outline: 2px dashed var(--primary-color);
     outline-offset: 4px;
-}
-
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
 }
 
 /* Sections */
@@ -109,6 +112,7 @@ section {
     display: inline-block;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
 }
 
 .button:hover,
@@ -142,17 +146,21 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        width: 100%;
-    }
-
     nav {
         flex-direction: column;
         background-color: var(--primary-color);
         padding: 10px;
     }
 
-    nav a {
+    nav li {
         margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 }
