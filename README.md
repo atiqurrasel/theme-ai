@@ -63,5 +63,4 @@ Contributions are welcome! Please fork the repository, make your changes, and su
 
 ## License
 
-This project is provided as-is for demonstration and educational purposes. It does not offer financial advice. Consider adding an open-source license of your choice (e.g., MIT License) if you wish to make the code freely available under defined terms.
-
+This project is provided as-is for demonstration and educational purposes.
