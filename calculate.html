@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check if a stock is halal-compliant based on its financial structure.">
+    <meta name="keywords" content="halal investment, stock screening, financial compliance">
+    <meta name="author" content="Sample Halal Investment Screening Website">
+    <title>Calculate Halal Metric – Halal Investment Screening</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Halal Metric Calculator</h1>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="calculate.html" aria-current="page">Calculate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="calculate-heading">
+            <h2 id="calculate-heading">Check a Stock’s Halal Compliance</h2>
+            <p>Enter a stock ticker symbol below, and we’ll fetch basic financial info to determine whether it meets common halal investment criteria. The result will be highlighted in green if halal-compliant and red if not.</p>
+
+            <form id="halal-form" aria-labelledby="calculate-heading">
+                <label for="ticker">Stock Ticker Symbol:</label><br>
+                <input type="text" id="ticker" name="ticker" placeholder="e.g., AAPL" required>
+                <button type="submit" class="button metric">Check Compliance</button>
+            </form>
+
+            <div id="result" aria-live="polite" class="result-container" style="margin-top:20px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2024 Sample Halal Investment Screening Website. All rights reserved.<br>
+            Disclaimer: Results are for demonstration purposes only and are not guaranteed. This site does not offer financial advice.
+        </p>
+    </footer>
+
+    <!-- Script to handle the Halal Metrics Calculation -->
+    <script>
+        document.getElementById('halal-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const ticker = document.getElementById('ticker').value.trim().toUpperCase();
+            const resultDiv = document.getElementById('result');
+
+            if (!ticker) {
+                resultDiv.textContent = 'Please enter a valid ticker symbol.';
+                resultDiv.style.color = 'black';
+                resultDiv.style.backgroundColor = 'transparent';
+                return;
+            }
+
+            // Mocked logic: In practice, you’d fetch real data from Yahoo Finance or another API.
+            // For demonstration, let's assume ticker ending with 'H' is halal and others are not.
+            // Replace this with actual API calls and logic as needed.
+            // Example of fetching data (commented out):
+            //
+            // fetch(`https://api.example.com/halal-check?ticker=${ticker}`)
+            //   .then(response => response.json())
+            //   .then(data => {
+            //      // Process data to determine compliance
+            //   });
+
+            let isHalal = ticker.endsWith('H'); // Mock condition
+            if (isHalal) {
+                resultDiv.textContent = `${ticker} appears to be Halal-Compliant.`;
+                resultDiv.style.backgroundColor = '#4CAF50'; // Green
+                resultDiv.style.color = '#ffffff';
+                resultDiv.style.padding = '10px';
+                resultDiv.style.borderRadius = '5px';
+            } else {
+                resultDiv.textContent = `${ticker} does not meet Halal criteria.`;
+                resultDiv.style.backgroundColor = '#FF5050'; // Red
+                resultDiv.style.color = '#ffffff';
+                resultDiv.style.padding = '10px';
+                resultDiv.style.borderRadius = '5px';
+            }
+        });
+    </script>
+</body>
+</html>
