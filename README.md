@@ -34,7 +34,7 @@ This project integrates basic information pages, a contact form, and a simple â€
 
 1. **Clone the Repository:**  
    ```bash
-   git clone https://github.com/your-username/halal-investment-screening.git
+   git clone https://github.com/atiqurrasel/halal-investment-screening.git
    ```
    
 2. **Open the Project Locally:**  
