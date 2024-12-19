@@ -1,5 +1,5 @@
 
-# Halal Investment Screening Website
+# Halal Investment Screening Website (Mock-Up)
 
 **A sample static website that provides insights into halal-compliant investing, inspired by Wahed’s approach.**  
 This project integrates basic information pages, a contact form, and a simple “Halal Metric” calculator that checks whether a stock’s financial structure is considered halal-compliant based on a simplified heuristic.
